@@ -1,0 +1,14 @@
+<div *ngIf=visible>
+
+  <h2> ID: {{resultDetail.id}} / Transaction Detail: {{resultDetail.label}}</h2>
+  <div>
+      <div><span>Description: </span>{{resultDetail.description}}</div>
+      <div><span>Amount: </span>{{resultDetail.amount}}</div>
+      <div><span>Balance: </span>{{resultDetail.balance}}</div>
+      <div><span>Date: </span>{{resultDetail.date}}</div>
+      
+  </div>
+
+  <button (click)="goBack()">go back</button>
+
+</div>

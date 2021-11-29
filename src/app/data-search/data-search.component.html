@@ -1,0 +1,40 @@
+
+
+<div class="transactions-menu" >
+    <table class="table table-hover">
+        <thead>
+        
+            <tr>
+                <td (click)="sort('id')">
+                    ID
+                    <span *ngIf="key =='id'">{{reverse ? '▲' : '▼'}}</span>    
+                </td>
+                <td (click)="sort('amount')">
+                    AMOUNT
+                    <span *ngIf="key =='amount'">{{reverse ? '▲' : '▼'}}</span>    
+                </td>
+                <td (click)="sort('balance')">
+                    BALANCE
+                    <span *ngIf="key =='balance'">{{reverse ? '▲' : '▼'}}</span>    
+                </td>
+                <td (click)="sort('label')">
+                    LABEL
+                    <span *ngIf="key =='label'">{{reverse ? '▲' : '▼'}}</span>    
+                </td>
+                <td (click)="sort('date')">
+                    DATE
+                    <span *ngIf="key =='date'">{{reverse ? '▲' : '▼'}}</span>    
+                </td>
+            </tr>
+    
+        </thead>
+        <tr *ngFor = "let res of result | orderBy: key : reverse;">
+        
+            <td> <a routerLink="/transactionDetail/{{res.id}}">{{res.id}}</a></td>
+            <td>{{res.amount}}</td>
+            <td>{{res.balance}}</td>
+            <td>{{res.label}}</td>
+            <td>{{res.date}}</td>
+        </tr>
+    </table>
+</div>
